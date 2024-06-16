@@ -12,13 +12,15 @@ export const Users = () => {
     count: 6,
   })
 
+  console.log(isLoading, data);
+  
   if (isLoading || !data) return <Loading />
 
   const { users, total_pages } = data  
-
+  
   const handleShowMore = () => {
     if (page < total_pages) {
-      setPage(page + 1) 
+      setPage(prev => prev + 1) 
     }
   }
 
