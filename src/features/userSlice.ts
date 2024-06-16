@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { AuthToken, User, UserListResponse } from "@/app/types";
+import { AuthToken, User, UserGetById, UserListResponse } from "@/app/types";
 import { userApi } from "@/app/api/userApi";
 import { RootState } from "@/app/store";
 
 export interface InitialState {
-  user: User | null
+  user: UserGetById | null
   users: User[] | null
   data: UserListResponse | null
   token: AuthToken | null
@@ -22,22 +22,19 @@ const slice = createSlice({
   initialState,
   reducers: {
     logout: () => initialState,
-    resetUser: (state) => {
-      state.user = null
-    }
   },
   extraReducers: (builder) => {
     builder
       .addMatcher(
-        userApi.endpoints.getUserById.matchFulfilled,
-        (state, action) => {
-          state.user = action.payload
-        },
-      )
-      .addMatcher(
         userApi.endpoints.getUsers.matchFulfilled,
         (state, action) => {
           state.data = action.payload
+        },
+      )
+      .addMatcher(
+        userApi.endpoints.getUserById.matchFulfilled,
+        (state, action) => {
+          state.user = action.payload
         },
       )
       .addMatcher(
@@ -50,9 +47,9 @@ const slice = createSlice({
   }
 })
 
-export const { logout, resetUser } = slice.actions
+export const { logout } = slice.actions
 export default slice.reducer
 
-export const selectUser = (state: RootState) => state.user.user
 export const selectUsers = (state: RootState) => state.user.data
+export const selectUser = (state: RootState) => state.user.user
 export const selectToken = (state: RootState) => state.user.token
