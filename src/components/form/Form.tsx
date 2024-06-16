@@ -149,11 +149,10 @@ export const Form = () => {
           </Button>
         </form>
       ) : (
-          <div className="w-full flex justify-center mt-12">
-            <img src={registeredUser} alt="registered" />
-          </div>
-        )
-      }
+        <div className="w-full flex justify-center mt-12">
+          <img src={registeredUser} alt="registered" loading="lazy" />
+        </div>
+      )}
     </>
   )
 };

@@ -22,7 +22,7 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
   checked,
 }) => {
   return (
-    <div className="flex items-center gap-3">
+    <li className="flex items-center gap-3">
       <label
         className="relative flex items-center rounded-full cursor-pointer"
         htmlFor={id}
@@ -47,7 +47,7 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
       >
         {label}
       </label>
-    </div>
+    </li>
   )
 }
 

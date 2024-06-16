@@ -8,7 +8,7 @@ export const Header = () => {
     <header className="h-[3.75rem] w-full bg-white fixed t-0 sm_custom:px-4  md:px-8 lg:px-16 z-50">
       <nav className="flex items-center justify-between h-full max-w-screen-xl mx-auto">
         <Link href="home" className="cursor-pointer">
-          <img src={logo} alt="logo" />
+          <img src={logo} alt="logo" loading="lazy" />
         </Link>
         <ul className="flex flex-row gap-4">
           <li>
