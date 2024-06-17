@@ -6,7 +6,7 @@ const { plugin } = require("postcss")
 
 module.exports = {
   mode: "development",
-  entry: "/src/main.tsx",
+  entry: "./src/main.tsx",
   module: {
     rules: [
       {
@@ -37,6 +37,7 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
+    publicPath: "/",
   },
   plugins: [
     new MiniCssExtractPlugin(),
