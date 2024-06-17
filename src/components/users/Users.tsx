@@ -14,8 +14,6 @@ export const Users = () => {
     count: 6,
   })
   const data = useSelector(selectUsers)
-
-  console.log(isLoading, data);
   
   if (isLoading || !data) return <Loading />
 

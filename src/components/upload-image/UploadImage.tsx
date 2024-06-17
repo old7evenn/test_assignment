@@ -17,14 +17,12 @@ export type UploadImageProps = {
   required?: boolean | string
 }
 
-
 export const UploadImage: React.FC<UploadImageProps> = ({
   handleFileChange,
   fileName,
   name,
   error
 }) => {
-
   return (
     <div>
       <div className="flex">

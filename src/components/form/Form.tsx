@@ -18,15 +18,12 @@ export const Form = () => {
   const [register, { isLoading }] = useRegisterMutation()
   const [triggerGetUsers] = useLazyGetUsersQuery()
   const {data} = useGetPositionsQuery()
-  const user = useGetUserByIdQuery('3') 
+  useGetUserByIdQuery('3') 
   const [selectedFile, setSelectedFile] = useState<File | null>(null)
   const [positionId, setPositionId] = useState(1)
   const [isRegistered, setIsRegistered] = useState(localStorage.getItem('is_registered') ? true : false)
   const [errUploadFile, setErrUploadFile] = useState<string>("")
-  const [error, setError] = useState("")
-
-  console.log(user.data?.user.name);
-  
+  const [error, setError] = useState("")  
   
   const {
     handleSubmit,
@@ -89,9 +86,7 @@ export const Form = () => {
   setTimeout(() => {
     setError('')
   }, 5000)
-  
-  console.log(error);
-  
+    
 
   return (
     <>

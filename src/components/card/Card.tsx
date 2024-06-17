@@ -1,7 +1,6 @@
 import React from "react";
 import { UserCard } from "@/app/types"
 
-
 export const Card: React.FC<UserCard> = ({ position, phone, email, name, photo }) => {
   return (
     <div className="max-h-64 p-5 grid place-items-center bg-white rounded-xl sm_custom:w-[20.5rem] sm:w-[17.5rem] md:w-[21.5rem] md_custom:w-[19.5rem] lg_custom:w-[23.125rem] ">

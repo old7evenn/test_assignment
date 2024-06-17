@@ -2,6 +2,7 @@ import { userApi } from "@/app/api/userApi";
 import { createListenerMiddleware } from "@reduxjs/toolkit";
 
 export const listenerMiddleware = createListenerMiddleware()
+
 listenerMiddleware.startListening({
   matcher: userApi.endpoints.getToken.matchFulfilled,
   effect: async (action, listenerApi) => {
@@ -12,6 +13,7 @@ listenerMiddleware.startListening({
     }
   }
 })
+
 listenerMiddleware.startListening({
   matcher: userApi.endpoints.getUserById.matchFulfilled,
   effect: async (action, listenerApi) => {
@@ -22,6 +24,7 @@ listenerMiddleware.startListening({
     }
   }
 })
+
 listenerMiddleware.startListening({
   matcher: userApi.endpoints.register.matchFulfilled,
   effect: async (action, listenerApi) => {
