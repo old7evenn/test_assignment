@@ -6,7 +6,7 @@ const { plugin } = require("postcss")
 
 module.exports = {
   mode: "development",
-  entry: "./src/main.tsx",
+  entry: "/src/main.tsx",
   module: {
     rules: [
       {
@@ -21,8 +21,10 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|jpeg)$/,
-        use: ["file-loader?name=[name].[ext]"],
-        exclude: /node_modules/,
+        type: "asset/resource",
+        generator: {
+          filename: "assets/[name][ext][query]",
+        },
       },
     ],
   },
