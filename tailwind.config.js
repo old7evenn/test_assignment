@@ -18,7 +18,7 @@ export default {
         "screen-xl": "1170px",
       },
       backgroundImage: {
-        "custom-image": "url('http://localhost:8080/background.png')",
+        "custom-image": "url('../background.png')",
       },
       fontFamily: {
         body: ["Nunito"],
