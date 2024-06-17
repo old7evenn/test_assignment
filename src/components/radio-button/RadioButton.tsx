@@ -1,5 +1,5 @@
-import { Checked } from "@/assets/icons/checked"
 import React from "react"
+import { Checked } from "@/assets/icons/checked"
 
 type RadioButtonProps = {
   id: string

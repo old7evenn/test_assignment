@@ -9,9 +9,8 @@ export default {
       md: { min: "768px", max: "1023px" },
       md_custom: { min: "1025px", max: "1169px" },
 
-      lg: { min: "1024px"},
+      lg: { min: "1024px" },
       lg_custom: { min: "1170px" },
-
     },
     extend: {
       colors: {},
@@ -19,7 +18,8 @@ export default {
         "screen-xl": "1170px",
       },
       backgroundImage: {
-        "custom-image": "url('/src/assets/images/background.jpg')",
+        "custom-image":
+          "url('http://localhost:8080/background.png')",
       },
       fontFamily: {
         body: ["Nunito"],

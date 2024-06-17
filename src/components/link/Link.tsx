@@ -1,13 +1,14 @@
+import React from "react"
 import Scroll from "react-scroll"
 const ScrollLink = Scroll.Link
 
 export type LinkProps = {
   children: React.ReactNode
   href: string
-  className?: string 
+  className?: string
 }
 
-export const Link: React.FC<LinkProps> = ({children, href, className}) => {
+export const Link: React.FC<LinkProps> = ({ children, href, className }) => {
   return (
     <ScrollLink
       spy={true}
@@ -20,4 +21,4 @@ export const Link: React.FC<LinkProps> = ({children, href, className}) => {
       {children}
     </ScrollLink>
   )
-};
+}

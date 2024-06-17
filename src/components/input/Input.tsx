@@ -1,3 +1,4 @@
+import React from "react"
 import { Control, RegisterOptions, useController } from "react-hook-form"
 import { ErrorMessage } from "../error-message/ErrorMessage"
 
@@ -25,7 +26,7 @@ export const Input: React.FC<InputProps> = ({
   required = false,
   rules = {},
   endContent,
-  errorMessage
+  errorMessage,
 }) => {
   const {
     field,

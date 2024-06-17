@@ -4,13 +4,16 @@ import { useGetUsersQuery } from "@/app/api/userApi"
 import { Loading } from "@/assets/icons/loading"
 import { Card } from "../card/Card"
 import { Container } from "../container/Container"
+import { useSelector } from "react-redux"
+import { selectUsers } from "@/features/userSlice"
 
 export const Users = () => {
   const [page, setPage] = useState(1) 
-  const { data, isLoading } = useGetUsersQuery({
+  const { isLoading } = useGetUsersQuery({
     page: page,
     count: 6,
   })
+  const data = useSelector(selectUsers)
 
   console.log(isLoading, data);
   

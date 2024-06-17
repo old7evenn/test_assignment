@@ -1,3 +1,5 @@
+import React from "react"
+
 export const Checked = () => {
   return (
     <svg
