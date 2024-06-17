@@ -19,7 +19,7 @@ export default {
       },
       backgroundImage: {
         "custom-image":
-          "url('http://localhost:8080/background.png')",
+          "url('/src/assets/images/background.png')",
       },
       fontFamily: {
         body: ["Nunito"],
